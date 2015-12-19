@@ -26,7 +26,7 @@ module ConsulCookbook
 
       # @!attribute binary_url
       # @return [String]
-      attribute(:binary_url, kind_of: String, default: 'https://releases.hashicorp.com/consul/%{version}/consul_%{filename}.zip')
+      attribute(:binary_url, kind_of: String, default: 'https://releases.hashicorp.com/consul/%{version}/%{filename}.zip')
 
       # @!attribute source_url
       # @return [String]
@@ -41,7 +41,7 @@ module ConsulCookbook
       end
 
       def binary_filename
-        [version, 'web_ui'].join('_')
+        ['consul', version, 'web_ui'].join('_')
       end
     end
   end
